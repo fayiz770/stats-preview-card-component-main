@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white2: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--very-dark-blue);
+    padding: 0 1.5em;
+}
+
+.main {
+    border-radius: 1em;
+    background: var(--dark-desaturated-blue);
+    color: white;
+    text-align: center;
+}
+
+article {
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.analitics {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.analitics div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.insights {
+    color: var(--soft-violet);
+}
+
+.gray,
+.text {
+    color: var(--slightly-transparent-white2);
+}
+
+.text {
+    line-height: 1.5rem;
+    padding: 0 2em;
+}
+
+.gray {
+    letter-spacing: 0.1rem;
+    font-size: 0.7em;
+}
+
+.image {
+    border-radius: 1em 1em 0 0;
+    min-width: 100%;
+    height: 100%;
+    background: var(--soft-violet);
+}
+
+
+.image-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(277, 64%, 61%, 0.6);
+    border-radius: 1em 1em 0 0;
+}
+
+@media (min-width: 768px){
+    .image-container {
+        grid-area: img;
+    }
+    article {
+        gap: 2em;
+        padding: 4em 3em;
+        grid-area: art;
+    }
+
+    .image,
+    .overlay {
+        border-radius: 0 1rem 1rem 0;
+    }
+
+    .text {
+        padding: 0;
+    }
+    .main {
+        text-align: start;
+        width: 70%;
+        display: grid;
+        grid-template-areas: 
+            'art img'
+        ;
+    }
+
+    .analitics {  
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
